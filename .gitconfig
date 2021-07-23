@@ -1,0 +1,6 @@
+[user]
+  email = ...
+  name = ...
+[alias]
+  prettylog = log --format='%C(bold)%an %C(cyan)%H%Creset%n%C(yellow)%s%Creset%n%ar %Cgreen%cd%n' --date=local
+  brieflog = log --format='%C(green)%cd%Creset :: %C(cyan)%H%Creset :: %s' --date=local
