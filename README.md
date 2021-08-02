@@ -21,7 +21,7 @@ _it might be helpful to run: `rm -f ~/.zcompdump; compinit` after file moves and
 _reference: https://github.com/git/git/tree/master/contrib/completion_
 
 ## Vi / Vim
-vi config  - http://public.dhe.ibm.com/software/dw/aix/sample.exrc
+vi config  - http://public.dhe.ibm.com/software/dw/aix/sample.exrc  
 vim config - http://public.dhe.ibm.com/software/dw/aix/sample.vimrc
 ### Colors
 * https://github.com/AlessandroYorba/Sierra
