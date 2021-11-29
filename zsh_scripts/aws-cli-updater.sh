@@ -1,5 +1,5 @@
 #!/bin/zsh
-. shared.sh
+. ./shared.sh
 
 cprint "\n/// AWS command-line interface updater"
 cprint "--------------------------------------"
