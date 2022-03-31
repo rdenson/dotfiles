@@ -1,0 +1,5 @@
+#!/bin/zsh
+. ./shared.sh
+
+rfc3339=$(date -r $1 '+%Y-%m-%dT%H:%M:%S %Z')
+printf "  $ct_cyan%s$ct_reset\n" $rfc3339

@@ -28,33 +28,3 @@ sudo installer -pkg $installer -target /
 cprint "removing installer"
 rm $installer
 cprint "aws cli version: $ct_reset$ct_yellow$(aws --version)$ct_reset\n"
-
-# cliToolLocation=$(which aws)
-# printf "installed in → $cliToolLocation\n"
-# printf "symlinked below:\n"
-# ls -l $cliToolLocation
-# exit 99
-#printf "\nremoving installation...\n"
-
-## remove symlinks
-## ----------------
-##while IFS= read -r line; do
-##  #rm $line
-##  echo "> [$line]"
-##done <<< "$(ls $cliToolLocation* | cut -f1 )"
-#for f in $(which aws)*; do
-  #echo "rm -i $f"
-#  rm -i "$f"
-#done
-#exit 1
-
-# remove main installation
-# -------------------------
-# "/aws" → length 4
-#EXEC_SIZE=4
-#sourceToLink=$(perl -MCwd -e 'print Cwd::abs_path shift' $cliToolLocation)
-#sourceSize=$(( ${#sourceToLink} - 4 ))
-#mainInstallDir=$(echo $sourceToLink | cut -c1-$sourceSize)
-#echo "sudo rm -rf $mainInstallDir"
-#sudo rm -rf "$mainInstallDir"
-#printf "done\n"

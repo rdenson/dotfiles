@@ -1,6 +1,10 @@
 export GOPATH=$HOME/repos/go
 export N_PREFIX=$HOME/n_mgr
-export PGPASSFILE=$HOME/.pgpass
+export PATH=$N_PREFIX/bin:$PATH$
+
+alias epochget="~/bin/epochget"
+alias epochconv="~/bin/epochconv"
+alias ll="ls -ahl"
 
 # --- Git Things --- #
 zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
@@ -9,7 +13,7 @@ setopt prompt_subst
 . ~/.git-prompt.sh
 
 # --- FZF things --- #
-alias -g qs="~/bin/qs"
+alias -g qs="~/bin/query"
 
 PROMPT='%F{91}%y%f:%F{green}%3~%f%F{cyan}$(__git_ps1)%f ▶︎ '
 

@@ -1,0 +1,5 @@
+#!/bin/zsh
+. ./shared.sh
+
+unixts=$(date '+%s')
+printf "  $ct_cyan%s$ct_reset\n" $unixts
