@@ -13,7 +13,7 @@ setopt prompt_subst
 . ~/.git-prompt.sh
 
 # --- FZF things --- #
-alias -g qs="~/bin/query"
+alias -g query="~/bin/query"
 
 PROMPT='%F{91}%y%f:%F{green}%3~%f%F{cyan}$(__git_ps1)%f ▶︎ '
 
