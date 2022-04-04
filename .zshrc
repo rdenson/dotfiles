@@ -2,6 +2,7 @@ export GOPATH=$HOME/repos/go
 export N_PREFIX=$HOME/n_mgr
 export PATH=$N_PREFIX/bin:$PATH$
 
+alias battery="~/bin/battery"
 alias datef="~/bin/datef"
 alias epochget="~/bin/epochget"
 alias epochconv="~/bin/epochconv"
