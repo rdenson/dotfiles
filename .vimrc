@@ -8,17 +8,30 @@ so ~/.exrc
 set nohlsearch
 
 " status line - Kim Schultz ("Hacking Vim")
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
-set laststatus=2
+" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
+" set laststatus=2
+
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 set background=dark
 syntax on
+if !exists("g:syntax_on")
+  syntax enable
+endif
+
 " --- custom color schemes ---
 " https://github.com/rafi/awesome-vim-colorschemes
-"   sierra: git@github.com:AlessandroYorba/Sierra.git
+"   deus: git@github.com:ajmwagar/vim-deus.git
 "   oceanic_material: git@github.com:glepnir/oceanic-material.git
 "   seoul256: git@github.com:junegunn/seoul256.vim.git
-colorscheme sierra
+"   sierra: git@github.com:AlessandroYorba/Sierra.git
+"   tender: git@github.com:jacoborus/tender.vim.git
+" https://github.com/vim-airline/vim-airline
+colorscheme seoul256
+let g:airline_theme = 'papercolor'
+let macvim_skip_colorscheme=1
 
 " --- FZF settings ---
 " enable fzf in vim

@@ -2,9 +2,11 @@ export GOPATH=$HOME/repos/go
 export N_PREFIX=$HOME/n_mgr
 export PATH=$N_PREFIX/bin:$PATH$
 
+alias datef="~/bin/date"
 alias epochget="~/bin/epochget"
 alias epochconv="~/bin/epochconv"
 alias ll="ls -ahl"
+alias npmlist="npm list -g --depth 0"
 
 # --- Git Things --- #
 zstyle ':completion:*:*:git:*' script ~/.git-completion.bash

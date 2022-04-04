@@ -1,0 +1,22 @@
+#!/bin/zsh
+. ./shared.sh
+
+comparison=$1
+
+std_date=$(date -j '+%F %T %z (%Z)')
+loc_date=$(date -j '+%A | day-of-year: %j week-of-year: %V')
+utc_date=$(date -j -u '+%F %T %z (%Z)')
+
+pretty_print_date() {
+  printf "  $ct_cyan%s$ct_reset\n" $1
+}
+
+if [ -n "$comparison" ] && [ "$comparison" = "utc" ]; then
+  pretty_print_date $std_date
+  pretty_print_date $utc_date
+  exit 0
+fi
+
+pretty_print_date $std_date
+pretty_print_date $loc_date
+pretty_print_date $(date '+%s')

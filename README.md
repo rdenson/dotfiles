@@ -22,7 +22,8 @@ _reference: https://github.com/git/git/tree/master/contrib/completion_
 
 ## Vi / Vim
 vi config  - http://public.dhe.ibm.com/software/dw/aix/sample.exrc  
-vim config - http://public.dhe.ibm.com/software/dw/aix/sample.vimrc
+vim config - http://public.dhe.ibm.com/software/dw/aix/sample.vimrc  
+vim status bar - https://github.com/vim-airline/vim-airline
 ### Colors
 * https://github.com/AlessandroYorba/Sierra
 * https://github.com/glepnir/oceanic-material
@@ -36,3 +37,11 @@ vim config - http://public.dhe.ibm.com/software/dw/aix/sample.vimrc
 | fzf | https://github.com/junegunn/fzf |
 | jq | https://stedolan.github.io/jq/ |
 | ripgrep | https://github.com/BurntSushi/ripgrep |
+
+### Scripts / Generic Functionality
+```sh
+  # local scripts
+  $HOME/bin ← scripts
+  # executables
+  /usr/local/bin + $HOME/.zsh/functions
+```
