@@ -3,6 +3,7 @@
 
 comparison=$1
 
+# https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/strftime.3.html
 std_date=$(date -j '+%F %T %z (%Z)')
 loc_date=$(date -j '+%A | day-of-year: %j week-of-year: %V')
 utc_date=$(date -j -u '+%F %T %z (%Z)')
