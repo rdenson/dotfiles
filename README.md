@@ -24,8 +24,15 @@ _reference: https://github.com/git/git/tree/master/contrib/completion_
 vi config  - http://public.dhe.ibm.com/software/dw/aix/sample.exrc  
 vim config - http://public.dhe.ibm.com/software/dw/aix/sample.vimrc  
 vim status bar - https://github.com/vim-airline/vim-airline  
+powerline fonts - https://github.com/powerline/fonts (_install then set in terminal preferences_)
 
 _install plugins using [vim-plug](https://github.com/junegunn/vim-plug)_
+```sh
+mkdir ~/.vim/autoload
+mkdir ~/.vim/plugged
+# from vim
+:PluginInstall
+```
 ### Colors
 * https://github.com/AlessandroYorba/Sierra
 * https://github.com/glepnir/oceanic-material

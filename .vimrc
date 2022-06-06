@@ -40,8 +40,18 @@ endif
 "   tender: git@github.com:jacoborus/tender.vim.git
 " https://github.com/vim-airline/vim-airline
 colorscheme seoul256
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.colnr = '☞ '
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+set t_Co=256
 let g:airline_theme = 'papercolor'
-let macvim_skip_colorscheme=1
+let macvim_skip_colorscheme = 1
 
 " --- FZF settings ---
 " enable fzf in vim
