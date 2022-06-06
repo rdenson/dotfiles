@@ -23,7 +23,9 @@ _reference: https://github.com/git/git/tree/master/contrib/completion_
 ## Vi / Vim
 vi config  - http://public.dhe.ibm.com/software/dw/aix/sample.exrc  
 vim config - http://public.dhe.ibm.com/software/dw/aix/sample.vimrc  
-vim status bar - https://github.com/vim-airline/vim-airline
+vim status bar - https://github.com/vim-airline/vim-airline  
+
+_install plugins using [vim-plug](https://github.com/junegunn/vim-plug)_
 ### Colors
 * https://github.com/AlessandroYorba/Sierra
 * https://github.com/glepnir/oceanic-material
