@@ -1,3 +1,6 @@
+# for apple silicon or non-intel installations
+path=('/opt/homebrew/bin', $path)
+
 export GOPATH=$HOME/repos/go
 export N_PREFIX=$HOME/n_mgr
 export PATH=$N_PREFIX/bin:$PATH$
