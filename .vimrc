@@ -15,9 +15,10 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 " Plug 'fatih/vim-go', { 'tag': '1.25' }
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 if (has("termguicolors"))
