@@ -18,7 +18,7 @@ set expandtab
 call plug#begin()
 " Plug 'fatih/vim-go', { 'tag': '1.25' }
 Plug 'vim-airline/vim-airline'
-call plug#end()$
+call plug#end()
 
 if (has("termguicolors"))
   set termguicolors
