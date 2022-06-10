@@ -17,6 +17,7 @@ set expandtab
 
 call plug#begin('~/.vim/plugged')
 " Plug 'fatih/vim-go', { 'tag': '1.25' }
+Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
