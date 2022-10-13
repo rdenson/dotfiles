@@ -1,23 +1,51 @@
 #!/bin/zsh
+#
+# date formatting (datef)
+# -----------------------
+# This script tries to quickly show the current date in multiple formats. It also
+# allows for timezone "conversion" or comparison rather between the local system
+# and some specified locale.
+#
+# date used here is from OSX not GNU date
+# some commands that may be helpful wrt time info:
+#   locale
+#   sudo plutil -p /var/db/timed/com.apple.timed.plist
+#   sudo plutil -p /System/Library/LaunchDaemons/com.apple.timed.plist
+#   sntp -d time.apple.com
+#   {EDITOR} /etc/ntp.conf
+
 . ./shared.sh
 
 comparison=$1
-
+# for more information on date's output formats ⬇
 # https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/strftime.3.html
-std_date=$(date -j '+%F %T %z (%Z)')
+output_fmt='+%F %T %z (%Z)'
+
+std_date=$(date -j $output_fmt)
 loc_date=$(date -j '+%A | day-of-year: %j week-of-year: %V')
-utc_date=$(date -j -u '+%F %T %z (%Z)')
+utc_date=$(date -j -u $output_fmt)
 
 pretty_print_date() {
   printf "  $ct_cyan%s$ct_reset\n" $1
 }
 
-if [ -n "$comparison" ] && [ "$comparison" = "utc" ]; then
+# output local time+date plus another timezone on a separate line
+# sometimes it helps to see both timestamps
+if [ -n "$comparison" ]; then
   pretty_print_date $std_date
-  pretty_print_date $utc_date
+  if [ "$comparison" = "utc" ]; then
+    pretty_print_date $utc_date
+  else
+    # path to timezone data will be a symlink
+    # inspect the symlink destination to see valid timezones for TZ
+    tz_date=$(TZ=/usr/share/zoneinfo/$comparison date -j $output_fmt)
+    pretty_print_date $tz_date
+  fi
+
   exit 0
 fi
 
+# output an expanded view of the current date (local)
 pretty_print_date $std_date
 pretty_print_date $loc_date
 pretty_print_date $(date '+%s')
