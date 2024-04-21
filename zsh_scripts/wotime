@@ -1,0 +1,14 @@
+#! /bin/zsh
+
+loc2=$1
+loc3=$2
+tzsrc=/usr/share/zoneinfo
+local_timefmt='+%d %b %R %Z'
+timefmt='+%R %Z'
+
+timeloc1=$(date -j $local_timefmt)
+timeloc2=$(TZ=$tzsrc/$loc2 date -j $timefmt)
+timeloc3=$(TZ=$tzsrc/$loc3 date -j $timefmt)
+
+printf "%s ┃ %s ┃ %s\n" $timeloc1 $timeloc2 $timeloc3
+
