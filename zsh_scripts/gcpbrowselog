@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+. shared.sh
+
+kctx=$(kubectl config current-context | cut -d'_' -f2)
+cprint "currently on:"
+cprint_info "  $(gcloud projects describe $kctx --format=json | jq -r '.name + " (" + .projectId + ")"')"
+
+log_explorer_link="https://console.cloud.google.com/logs/query;query=resource.type%3D%22k8s_container%22%0Aresource.labels.namespace_name%3D%22org-system%22%0Aresource.labels.pod_name:%22org-engine%22;storageScope=project;summaryFields=resource%252Flabels%252Fpod_name:false:32:beginning;duration=PT1H?project=$kctx"
+
+open -n /Applications/Brave\ Browser.app --args --incognito $log_explorer_link
+

@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+. shared.sh
+
+testrunid=$1
+
+kctx=$(kubectl config current-context | cut -d'_' -f2)
+cprint "currently on:"
+cprint_info "  $(gcloud projects describe $kctx --format=json | jq -r '.name + " (" + .projectId + ")"')"
+
+matching_projects=$(
+  gcloud projects list \
+    --filter="name:*$testrunid*" \
+    --format=json | \
+    jq -r 'map(.projectId + " " + .labels["organization_id"] + " " +.labels["organization_name"]) | join("\n")'
+)
+
+printf "$ct_green\n"
+printf "GPID ROID SUBDOMAIN\n%s\n" $matching_projects | column -t
+printf "$ct_reset\n"
+

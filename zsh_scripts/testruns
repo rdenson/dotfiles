@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+. shared.sh
+
+branch=$1
+
+kctx=$(kubectl config current-context | cut -d'_' -f2)
+cprint "currently on:"
+cprint_info "  $(gcloud projects describe $kctx --format=json | jq -r '.name + " (" + .projectId + ")"')"
+
+testRunData=$(kubectl get testruns -o json | jq -r '
+  .items | map(select(.spec.SlackThreadExtraTemplateBlock | contains("'$branch'"))) | 
+  map(.status.runId + " " + .metadata.name + " " + .metadata.creationTimestamp + " " + .status.state + " " + .spec.prBranchName) |
+  join("\n")')
+
+printf "$ct_green\n"
+printf "ID TEST_RUN CREATED_AT STATE BRANCH\n%s\n" $testRunData | column -t
+printf "$ct_reset\n"
