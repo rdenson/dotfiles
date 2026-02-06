@@ -1,6 +1,19 @@
 [user]
-  email = ...
-  name = ...
+  email = richard.denson@forgerock.com
+  name = rdenson
+  signingkey = BF875384
+[commit]
+  gpgsign = true
 [alias]
-  prettylog = log --format='%C(bold)%an %C(cyan)%H%Creset%n%C(yellow)%s%Creset%n%ar %Cgreen%cd%n' --date=local
-  brieflog = log --format='%C(green)%cd%Creset :: %C(cyan)%H%Creset :: %s' --date=local
+  prettylog = log --color=always --format='%C(bold)%an %C(cyan)%H%Creset%n%C(yellow)%s%Creset%n%ar %Cgreen%cd%n' --date=local
+  prettylogstat = log --color=always --format='%C(bold)%an %C(cyan)%H%Creset%n%C(yellow)%s%Creset%n%ar %Cgreen%cd' --date=local --stat
+  brieflog = log --color=always --format='%C(green)%cd%Creset :: %C(cyan)%H%Creset :: %s' --date=local
+  finger = blame --date=local --color-lines --color-by-age -w
+  # inspection flow for some COMMIT/PATH
+  #
+  # git blame --date=local --color-lines --color-by-age -w PATH
+  # git prettylogstat -1 COMMIT
+  # git diff COMMIT^! -- PATH   notation "COMMIT^!" is the parent of COMMIT
+[credential "https://source.developers.google.com"]
+  helper = gcloud.sh
+
